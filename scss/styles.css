@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/* Variables */
+.header a:hover {
+  color: white;
+}
+
+.main__nosotros {
+  background-image: linear-gradient( #000000,#360036,#000000);
+}
+
+.nosotros__presentacion {
+  display: grid;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+.nosotros__presentacion .nosotros__fondo {
+  width: 100%;
+  opacity: 0.5;
+}
+.nosotros__presentacion .nosotros__presentacion__ghetto {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.nosotros__presentacion .nosotros__presentacion__ghetto h1 {
+  font-size: 45px;
+  text-align: center;
+  position: relative;
+  transition: font-size 1s, color 2s;
+  margin: 0px;
+}
+.nosotros__presentacion .nosotros__presentacion__ghetto h1:hover {
+  font-size: 55px;
+  color: white;
+}
+.nosotros__presentacion .nosotros__presentacion__ghetto .nosotros__logo {
+  display: flex;
+  width: 280px;
+  position: relative;
+  transition: width 2s;
+}
+.nosotros__presentacion .nosotros__presentacion__ghetto .nosotros__logo:hover {
+  width: 320px;
+}
+
+.nosotros__videos {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+  overflow: hidden;
+}
+.nosotros__videos iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 560px) {
+  .nosotros__videos iframe {
+    width: 560px;
+    height: 315px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
