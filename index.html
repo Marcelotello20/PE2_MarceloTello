@@ -22,6 +22,7 @@
             </div>
             
             <ul class="menu__nav">
+                <li><a class=menu__carrito href="./Imagenes/Carrito.png" width="80px"></a></li>
                 <li><a class=links__cambio href="views/productos.html">Productos</a></li>
                 <li><a class=links__cambio href="views/nosotros.html">Nosotros</a></li>
                 <li><a class=links__cambio href="views/contacto.html">Contacto</a></li>
@@ -46,10 +47,19 @@
                 <li>Mezcla</li>
                 <li>Masterizacion</li>
               </ul>
-       
-        </div>
-       </section>
-       <section class="caracteristicas">
+            </div>
+        </section>
+        <section class="formulario__datos">
+            <div class="formulario__datos__1">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Ingrese su nombre">
+                <label for="edad">Edad:</label>
+                <input type="text" id="edad" placeholder="Ingrese su edad">
+                <button onclick="ingresarDatos()">Ingresar</button>
+                <div class="formulario__datos__mensaje" id="resultado"></div>
+            </div>
+        </section>
+        <section class="caracteristicas">
          <h2 class="caracteristicas__titulo">Tu arte como merece ser tratada</h2>
          <div class="caracteristicas__articulos">
          <div class="caracteristicas__item">

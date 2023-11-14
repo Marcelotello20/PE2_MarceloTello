@@ -1,36 +1,38 @@
+function ingresarDatos() {
+    // Obtener el valor del input
+    let nombre = document.getElementById("nombre").value;
+    let edad = document.getElementById("edad").value;
 
-
-let saludoIntro= "¡Hola! es un gusto";
-let menorDeEdad= "Al ser menor te recomendamos que para comprar tengas el consentimiento de tus padres o un adulto a cargo de ti.";
-
-// Introduccion datos - Nombre y Apellido
-let nombreIntroducido = prompt("Introduce tu nombre:")
-let apellidoIntroducido = prompt("Introduce tu apellido:")
-let nombreCompleto = nombreIntroducido + " " + apellidoIntroducido ;
-
-function saludoNombre () {
-    if ((nombreIntroducido === "") || (apellidoIntroducido === "")){
-        alert ("Completar datos solicitados porfavor");
+    // Verificar si se introdujeron datos
+    if (nombre === "" || edad === "") {
+        document.getElementById("resultado").innerText = "Hola " + datoNoIntroducido;
     } else {
-        alert ( saludoIntro + " " + nombreCompleto);
-        let edadIntroducida = prompt("Introduce tu edad:");
-        mensajeEdad(edadIntroducida);
-    }    
-}
+        // Crear un indiv la clase Persona
+        let persona = new Persona(nombre, edad);
 
-// Introducción datos - Edad
-
-function mensajeEdad(edad) {
-    if ( edad === "") {
-        alert("Introduzca su edad porfavor");
-    } else if (edad >= 18){
-        alert("Eres mayor de edad y puedes disfrutar del contenido completo de nuestra sitio.");
-    } else {
-        alert(menorDeEdad);
+        // Modificar el DOM para mostrar el saludo
+        if (persona.edad >= 18) {
+            document.getElementById("resultado").innerText = saludoIntro + " " + persona.nombre + "! " + mayorDeEdad;
+        } else {
+            document.getElementById("resultado").innerText = saludoIntro + " " + persona.nombre + "! " + menorDeEdad;
+        }
     }
 }
 
-saludoNombre();
+let saludoIntro = "¡Hola! Es un gusto";
+let mayorDeEdad = "Eres mayor de edad y puedes disfrutar del contenido completo de nuestro sitio.";
+let menorDeEdad = "Al ser menor te recomendamos que para comprar tengas el consentimiento de tus padres o un adulto a cargo de ti.";
+let datoNoIntroducido = "Completar datos solicitados por favor.";
+
+// Clase para construir los datos cuando se ingresen
+class Persona {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad; 
+    }
+}
+
+// saludoNombre();
 
 //Valor Productos y Carrito
 
@@ -178,7 +180,7 @@ function productoMensaje() {
 
 }
 
-productoMensaje();
+// productoMensaje();
 
 // creando funcion para comprobar el carrito
 
@@ -200,11 +202,11 @@ function verCarro () {
     }
 }
 
-verCarro ();
+// verCarro ();
 
-agregarProductoAlCarro();
+// agregarProductoAlCarro();
 
-verCarro();
+// verCarro();
 
 
 
