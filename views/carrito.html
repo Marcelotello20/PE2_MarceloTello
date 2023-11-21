@@ -6,40 +6,47 @@
     <link rel="shorcut icon" href="../Imagenes/GLM.png">
     <link rel="stylesheet" href="../css/styles.css">
     <link href="../styles/estilos.css" rel="stylesheet">
-    <title>Contacto - Ghetto Life</title>
+    <title>Carrito - Ghetto Life</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans&display=swap" rel="stylesheet"> 
     <meta name="description" content="Estudio de producción musical Ghetto Life Muzik en Santiago de Chile, Cerro Navia.
-    Contacto para trabajar con nosotros.">
+    Carrito de compras.">
     <meta name="keywords" content="HTML, JS, ESTUDIO, PRODUCCION MUSICAL, SANTIAGO, CERRO NAVIA, CHILE, CONTACTO, GHETTO LIFE">
 </head>
 <body>
     <header class="header">
         <nav class="header__menu">
             <div class="logo__mobile"> 
-                <a href="../index.html" ><img id="logo-inicio" src="../Imagenes/GLM.png"alt="Logo Ghetto Life Muzik" width="80px"></a> 
+                <a href="../index.html" ><img id="logo-inicio" src="../Imagenes/GLM.png" alt="Logo Ghetto Life Muzik" width="80px"></a> 
             </div>
+            
             <ul class="menu__nav">
-                <li><a src="" href="productos.html">Productos</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a class=links__cambio href="productos.html">Productos</a></li>
+                <li><a class=links__cambio href="nosotros.html">Nosotros</a></li>
+                <li><a class=links__cambio href="contacto.html">Contacto</a></li>
             </ul> 
             </div>
-        </nav>  
+            <div class=menu__carrito>
+                <a  href="carrito.html"><img src="../Imagenes/Carrito.png" alt="imagen carrito" width="40px"></a>
+            </div>
+        </nav>
+       
+       
     </header>
+    <h1 id="titulo__carrito"></h1>
     <footer class="footer ">
         <div class="separador"></div>
         <h5 class="footer__titulo text-warning">Redes Sociales y Links</h5>
         
         <div class="footer__links">
-            <a href="views/contacto.html">Contacto</a>
+            <a href="contacto.html">Contacto</a>
             <a href="https://www.instagram.com/ghettolifemuzik/">Instagram</a>
             <a href="https://wa.me/56954762733">Whatsapp </a>
             <a href="https://www.youtube.com/@GhettoLifeMuzik">Youtube</a>
         </div>
         
     </footer>
-
+<script src="../js/main.js"></script>
 </body>
 </html>

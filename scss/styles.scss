@@ -62,6 +62,13 @@ body {
       .logo__mobile {
         height: 100%;
         width: 100%;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        a {
+          justify-self: center;
+          align-self: center;
+        }
       }
     }
     .menu__nav {
@@ -72,8 +79,20 @@ body {
       height: 25px;
       padding: 0; 
       transition: color 0.3s;
-      .menu__carrito {
-        width: 80px;
+    }
+    .menu__carrito {
+      width: 80px;
+      height: 100px;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      padding: 0;
+      margin: 0px 20px 0px 0px;
+      img {
+        transition:width 1s;
+        &:hover {
+        width:45px;
+        }
       }
     }
     a {
@@ -490,6 +509,7 @@ body {
 .main__productos__titulo {
   text-align: center;
 }
+
 .productos1 {
   width: 300px;
   position: relative;
@@ -1204,6 +1224,12 @@ body {
 
 
 
+// PAGINA CARRITO 
 
+#titulo__carrito {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 
 

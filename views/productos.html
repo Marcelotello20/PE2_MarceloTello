@@ -15,20 +15,29 @@
 </head>
 <body>
     <header class="header">
-        <nav class="header__menu">
-            <div class="logo__mobile"> 
-                <a href="../index.html" ><img id="logo-inicio" src="../Imagenes/GLM.png"alt="Logo Ghetto Life Muzik" width="80px"></a> 
-            </div>
-            <ul class="menu__nav">
-                <li><a src="" href="productos.html">Productos</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul> 
-            </div>
-        </nav>  
+    <nav class="header__menu">
+        <div class="logo__mobile"> 
+            <a href="../index.html" ><img id="logo-inicio" src="../Imagenes/GLM.png" alt="Logo Ghetto Life Muzik" width="80px"></a> 
+        </div>
+        
+        <ul class="menu__nav">
+            <li><a class=links__cambio href="productos.html">Productos</a></li>
+            <li><a class=links__cambio href="nosotros.html">Nosotros</a></li>
+            <li><a class=links__cambio href="contacto.html">Contacto</a></li>
+        </ul> 
+        </div>
+        <div class=menu__carrito>
+            <a  href="carrito.html"><img src="../Imagenes/Carrito.png" alt="imagen carrito" width="40px"></a>
+        </div>
+    </nav>
     </header>
     <main class="main__productos">
       <h1 class="main__productos__titulo">Productos</h1>
+      <section class="main__listaproductos">
+        <div id=”contenedor”>
+          <p class=”texto”></p>
+        </div>
+      </section>
       <section class="productos1">
         <div class="productos1__items">
           <div class="productos1__items__texto">
@@ -92,218 +101,19 @@
       <section id="catalogo" class="catalogo">
         <div class="separador"></div>
         <h2>Catalogo</h2>
-        
-        <div class="catalogo__prodmusicalcompleta">
-          <div class="separador"></div>
-          <h3>Prod Musical Completa</h3> 
-          <div class="catalogo__prodmusicalcompleta__items">
-            <div class="catalogo__prodmusicalcompleta__promo">
-              <h4 class="catalogo__subtitulo">Promo Apollo Full</h4>
-              <ul>
-                <li>Beat</li>
-                <li>Grabación</li>
-                <li>Afinación Manual</li>
-                <li>Mezcla (Wav - Mp3)</li>
-                <li>Master (Wav - Mp3)</li>
-              </ul>
-              <p class="catalogo__precio">$155.000</p>
-            </div>
-            <div class="catalogo__prodmusicalcompleta__promo">
-              <h4 class="catalogo__subtitulo">Promo Apollo</h4>
-              <ul>
-                <li>Beat</li>
-                <li>Grabación</li>
-                <li>Mezcla (Wav - Mp3)</li>
-                <li>Master (Wav - Mp3)</li>
-              </ul>
-              <p class="catalogo__precio">$145.000</p>
-            </div>
-            <div class="catalogo__prodmusicalcompleta__promo">
-              <h4 class="catalogo__subtitulo">Promo Akai</h4>
-              <ul>
-                <li>Beat</li>
-                <li>Grabación</li>
-                <li>Mezcla (Wav - Mp3)</li>
-                <li>Master (Wav - Mp3)</li>
-              </ul>
-              <p class="catalogo__precio">$125.000</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="catalogo__beats">
-          <div class="separador"></div>
-          <h3>Beats - Instrumentales</h3> 
-          <div class="catalogo__beats__items">
-            <div class="catalogo__beats__item">
-              <h4 class="catalogo__subtitulo">Beat a pedido</h4>
-              <ul>
-                <li>Proceso creativo a partir de cualquier idea. Si nos envias una referencia o tu voz ya grabada nos sirve para cohesionar mas el trabajo y asi sea mas compacto</li>
-                <li>Mezcla del Beat (Wav - Mp3)</li>
-                <li>PreMaster (Wav - Mp3)</li>
-              </ul>
-              <p class="catalogo__precio">$80.000</p>
-            </div>
-            <div class="catalogo__beats__item">
-              <h4 class="catalogo__subtitulo">Beat de Catalogo</h4>
-              <ul>
-                <li>Puedes elegir entre los beats de nuestro catalogo</li>
-                <li>Beat mezclado</li>
-                <li>PreMasterizado</li>
-              </ul>
-              <p class="catalogo__precio">$50.000</p>
-            </div>
-            <div class="catalogo__beats__item">
-              <h4 class="catalogo__subtitulo">Beat Ofertas</h4>
-              <ul>
-                <li>Puedes elegir entre los beats de nuestra sección de ofertas</li>
-                <li>Beat mezclado</li>
-                <li>PreMasterizado</li>
-              </ul>
-              <p class="catalogo__precio">$30.000</p>
-            </div>
-          </div>
-          <div class="catalogo__beats__info">
-            <h4>Cualquier licencia incluye</h4>
-            <div class="catalogo__beats__infotexto">
-              <p><strong>Archivo mp3 y Wav 24bits - 16bits (Alta Calidad)</strong></p>
-              <p>Te enviamos los archivos con la calidad que corresponde </p>
-            </div>
-            <div class="catalogo__beats__infotexto">
-              <p><strong>Escala y BPM</strong></p>
-              <p>Te enviamos un texto con la escala que se uso para el Beat y su Tempo</p>
-            </div>
-            <div class="catalogo__beats__infotexto">
-              <p><strong>Uso de librerias y efectos de la mas alta calidad</strong></p>
-              <p>Trabajamos con los mejores elementos para lucir las composiciones</p>
-            </div>
-          </div>  
-        </div>
-        
-        <div class="catalogo__grabaciondevoces">
-          <div class="separador"></div>
-          <h3>Grabación de Voces</h3> 
-          <div class="catalogo__grabaciondevoces-info">
-            <p>Apollo y Akai se refiere a la grabación con las distintas interfaces.</p>
-            <p>El estudio cuenta con la Apollo Twin que es una interfaz de sonido PRO 
-              y la interfaz Akai EIE de Media gama.
-            </p>
-          </div>
-          <div class="catalogo__grabaciondevoces__items">
-            <div class="catalogo__grabaciondevoces__item">
-              <div class="catalogo__grabaciondevoces__item-promo">
-                <h4 class="catalogo__subtitulo">Apollo</h4>
-                <ul>
-                  <li>2 Sesiones - 2Hrs c/u</li>
-                  <li>Recortes, Transiciones,Fx, etc.</li>
-                  <li>Mezcla (Wav - Mp3)</li>
-                  <li>PreMaster (Wav - Mp3)</li>
-                </ul>
-                <p class="catalogo__precio">$70.000</p>
-              </div>  
-              <div class="catalogo__grabaciondevoces__item-promo">
-                <h4 class="catalogo__subtitulo">Maqueta Apollo</h4>
-                <ul>
-                  <li>1 Sesiones - 2Hrs</li>
-                  <li>Mezcla en la misma sesión</li>
-                  <li>Stems de grabación de voz</li>
-                  <li>Demo básico</li>
-                </ul>
-                <p class="catalogo__precio">$30.000</p> 
-              </div>
-            </div>
-            <div class="catalogo__grabaciondevoces__item">
-              <div class="catalogo__grabaciondevoces__item-promo">
-                <h4 class="catalogo__subtitulo">Akai</h4>
-                <ul>
-                  <li>1 Sesiones - 2Hrs</li>
-                  <li>Recortes, Transiciones,Fx, etc.</li>
-                  <li>Mezcla (Wav - Mp3)</li>
-                  <li>Master (Wav - Mp3)</li>
-                </ul>
-                <p class="catalogo__precio">$60.000</p> 
-              </div>
-              <div class="catalogo__grabaciondevoces__item-promo">
-                <h4 class="catalogo__subtitulo">Maqueta Akai</h4>
-                <ul>
-                  <li>1 Sesiones - 2Hrs</li>
-                  <li>Mezcla en la misma sesión</li>
-                  <li>Stems de grabación de voz</li>
-                  <li>Demo básico</li>
-                </ul>
-                <p class="catalogo__precio">$20.000</p> 
-              </div>
-            </div>
-          </div>
-  
-          
-        </div>
-
-        <div class="catalogo__sonido">
-          <div class="separador"></div>
-          <h3>Ingenieria Mezcla - Master</h3>
-          <div class="catalogo__sonido__items">
-            <div class="catalogo__sonido__item">
-              <div class="catalogo__sonido__item-promo">
-                <h4>Mezcla Beat</h4>
-                <p>Mezcla tus beats para poder embellecer el trabajo hecho por tu beatmaker y conseguir el resultado que tanto esperas</p>
-                <p>Derecho a 3 Cambios de la mezcla, cualquier cambio extra $10.000 que se terminan sumando 3 arreglos mas con el pago</p>
-                <p class="catalogo__precio">$50.000</p>
-              </div>
-              <div class="catalogo__sonido__item-promo">
-                <h4>Mezcla de Voz</h4>
-                <p>Mezcla tus voces para poder darle ese color, sonido cálido y comprimido tan buscado en el mercado y que hara relucir aún más tus grabaciones.</p>
-                <p>Derecho a 3 cambios de la mezcla, cualquier cambio extra $10.000 que se terminan sumando 3 arreglos mas con el pago</p>
-                <p class="catalogo__precio">$50.000</p>
-              </div>
-            </div>
-           
-            <div class="catalogo__sonido__item">
-              <div class="catalogo__sonido__item-promo">
-                <h4>Master</h4>
-                <p>Finaliza el proceso de la ingenieria con el master, 
-                  dandole los ultimos retoques para que el track suene 
-                  competitivo y este listo para las plataformas digitales</p>
-                <p class="catalogo__precio">$10.000</p>
-              </div>
-              <div class="catalogo__sonido__item-promo">
-                <h4>Promo Mezcla+Master completa (Voz y Beat) </h4>
-                <p>Finaliza el proceso de la ingenieria con el master, dandole los ultimos retoques para que el track suene competitivo y este listo para las plataformas digitales</p>
-                <p class="catalogo__precio">$75.000</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="catalogo__sonido-info">
-            <h4>Cualquier licencia incluye</h4>
-            <div class="catalogo__sonido__infotexto">
-              <p><strong>Archivo mp3 y Wav 24bits - 16bits (Alta Calidad)</strong></p>
-              <p>Te enviamos los archivos con la calidad que corresponde </p>
-            </div>
-            <div class="catalogo__sonido__infotexto">
-              <p><strong>Escala y BPM</strong></p>
-              <p>Te enviamos un texto con la escala que se uso para la Sesion y su Tempo</p>
-            </div>
-            <div class="catalogo__sonido__infotexto">
-              <p><strong>Stems de la Mezcla</strong></p>
-              <p>Enviamos el multitrack para que puedas editarlo para tus usos</p>
-            </div>
-  
-          </div> 
-  
-        </div>
+        <div id="catalogo__lista"></div>
       </section>
-
     </main>
     <footer class="footer ">
         <div class="separador"></div>
         <h5 class="footer__titulo">Redes Sociales y Links</h5>
         <div class="footer__links">
-            <a href="views/contacto.html">Contacto</a>
+            <a href="contacto.html">Contacto</a>
             <a href="https://www.instagram.com/ghettolifemuzik/">Instagram</a>
             <a href="https://wa.me/56954762733">Whatsapp</a>
             <a href="https://www.youtube.com/@GhettoLifeMuzik">Youtube</a>
         </div>
     </footer>
+    <script src="../js/main.js"></script>
 </body>
 </html>

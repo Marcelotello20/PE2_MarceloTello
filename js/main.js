@@ -8,7 +8,7 @@ function ingresarDatos() {
         document.getElementById("resultado").innerText = "Hola " + datoNoIntroducido;
     } else {
         // Crear un indiv la clase Persona
-        let persona = new Persona(nombre, edad);
+        let persona = new Persona(nombre, parseInt(edad, 10));
 
         // Modificar el DOM para mostrar el saludo
         if (persona.edad >= 18) {
@@ -32,8 +32,6 @@ class Persona {
     }
 }
 
-// saludoNombre();
-
 //Valor Productos y Carrito
 
 const productos = [
@@ -53,162 +51,50 @@ const productos = [
     {id: 14, tipo: "sonido", nombre: 'Promo Mezcla + Master Voz y Beat', precio: 65000, cantidad: 4},    
 ];
 
-let carrito = [];
+// Crear los elementos y añadirlos al contenedor correcto
+for (const producto of productos) {
+    let contenedor = document.createElement("div");
+    contenedor.innerHTML = `<h3>ID: ${producto.id}</h3> 
+                            <p>Producto: ${producto.nombre}</p>
+                            <p>${producto.tipo}</p>
+                            <p>$ ${producto.precio}</p>
+                            <button class="agregar-carrito" data-id="${producto.id}">Agregar al carrito</button>`;
+    
+    document.querySelector("#catalogo__lista").appendChild(contenedor);
+}
 
-// function mostrarProductos() {
-//     let mensajeProductos = "Productos disponibles:\n";
-//     productos.forEach(producto => {
-//         mensajeProductos += `ID: ${producto.id}, Nombre: ${producto.nombre}, Precio: $${producto.precio}, Disponibles: ${producto.cantidad}\n`;
-//     });
-//     alert(mensajeProductos);
+// Agregar evento clic al botón "Agregar al carrito"
+const botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
+botonesAgregarCarrito.forEach(boton => {
+    boton.addEventListener('click', agregarAlCarrito);
+});
+
+// Función para agregar productos al carrito
+function agregarAlCarrito(event) {
+    const productId = parseInt(event.target.getAttribute('data-id'));
+
+    // Encontrar el producto en base a su ID
+    const productoSeleccionado = productos.find(producto => producto.id === productId);
+
+    if (productoSeleccionado) {
+        // Aquí puedes implementar la lógica para agregar el producto al carrito
+        // Por ahora, solo imprimiré un mensaje en la consola
+        alert(`Producto agregado al carrito: ${productoSeleccionado.nombre}`);
+        // También puedes actualizar la interfaz de usuario para reflejar el producto agregado al carrito
+    } else {
+        alert('Producto no encontrado');
+    }
+}
+
+// // CARRITO PAGINA
+
+// let tituloCarrito = document.getElementById("titulo__carrito")
+
+// if ( nombre === "" || edad === "" ) {
+//     tituloCarrito.innerText = "Bienvenido a tu carrito, " + datoNoIntroducido ;
+// } else {
+//     tituloCarrito.innerText = "Bienvenido a tu carrito, " + Persona.nombre; 
 // }
-// function agregarProductoAlCarro() {
-//     mostrarProductos(); 
-//     let agregarOtro = confirm("¿Deseas agregar otro producto al carrito?");
-//     if (agregarOtro) {
-//         let idProducto = Number(prompt("Introduce el ID del producto que deseas agregar al carrito:"));
-//         let productoElegido = productos.find(producto => producto.id === idProducto);
-//         if (productoElegido) {
-//             if (productoElegido.cantidad > 0) {
-//                 carrito.push(productoElegido);
-//                 productoElegido.cantidad--; // Restamos la cantidad disponible
-//                 alert(`Se ha agregado ${productoElegido.nombre} al carrito.`);
-//                 agregarProductoAlCarro(); // Llamada recursiva para agregar más productos
-//             } else {
-//                 alert(`Lo siento, no hay más unidades disponibles de ${productoElegido.nombre}.`);
-//                 agregarProductoAlCarro(); // Llamada recursiva para agregar más productos
-//             }
-//         } else {
-//             alert("No se encontró ningún producto con ese ID.");
-//             agregarProductoAlCarro(); // 
-//         }
-//     }
-// }
+// // tituloCarrito.innerText = "Bienvenido a tu carrito, " + Persona.nombre;
 
-// // Variable y Funcion para redirigir el mensaje y el producto a elegir
-
-// let productoIntroducido = prompt("¿Cual es el producto que buscas?Beat, Grabación o Producción Completa?");
-// productoIntroducido = productoIntroducido.toLowerCase();
-
-
-// function productoMensaje() {
-//     if ( productoIntroducido === "") {
-//         alert ("Elegir una de las opciones porfavor");
-//     } else if (( productoIntroducido === "beat" ) || ( productoIntroducido === "beats" )){
-//         const productosBeat = productos.filter(producto => producto.tipo === "beats");
-//         if (productosBeat.length > 0) {
-//             alert("Elegiste beat.\n\nProductos disponibles:\n" + 
-//                 productosBeat.map(producto => `${producto.nombre}, Id: ${producto.id}, Precio: $${producto.precio}, Disponibles: ${producto.cantidad}`).join("\n")
-//             );
-//             let agregarAlCarrito = confirm("¿Deseas agregar algún producto al carrito?");
-//             if (agregarAlCarrito) {
-//                let idProducto = Number(prompt("Introduce el ID del producto que deseas agregar al carrito:"));
-//                let productoElegido = productos.find(producto => producto.id === idProducto);
-//                if (productoElegido) {
-//                    if (productoElegido.cantidad > 0) {
-//                        carrito.push(productoElegido);
-//                        productoElegido.cantidad--; 
-//                        alert(`Se ha agregado ${productoElegido.nombre} al carrito.`);
-//                    } else {
-//                        alert(`Lo siento, no hay más unidades disponibles de ${productoElegido.nombre}.`);
-//                    }
-//                } else {
-//                    alert("No se encontró ningún producto con ese ID.");
-//                }
-//             }
-//             let tuBeat = prompt("Cuéntame sobre tu proyecto, la referencia, su concepto, etc. y trataré de responderte lo más rápido posible para proceder a trabajar. Muchas gracias.");
-//             return tuBeat;
-//         } else {
-//             alert("Lo siento, no hay productos de tipo 'beat' disponibles.");
-//         }
-//     } else if (( productoIntroducido === "grabacion" ) || ( productoIntroducido === "grabación")){
-//         const productosGrabacion = productos.filter(producto => producto.tipo === "grabacion");
-//         if (productosGrabacion.length > 0) {
-//             alert("Elegiste grabacion.\n\nProductos disponibles:\n" + 
-//                 productosGrabacion.map(producto => `${producto.nombre}, Id: ${producto.id}, Precio: $${producto.precio}, Disponibles: ${producto.cantidad}`).join("\n")
-//             );
-//             let agregarAlCarrito = confirm("¿Deseas agregar algún producto al carrito?");
-//             if (agregarAlCarrito) {
-//                let idProducto = Number(prompt("Introduce el ID del producto que deseas agregar al carrito:"));
-//                let productoElegido = productos.find(producto => producto.id === idProducto);
-//                if (productoElegido) {
-//                    if (productoElegido.cantidad > 0) {
-//                        carrito.push(productoElegido);
-//                        productoElegido.cantidad--; 
-//                        alert(`Se ha agregado ${productoElegido.nombre} al carrito.`);
-//                    } else {
-//                        alert(`Lo siento, no hay más unidades disponibles de ${productoElegido.nombre}.`);
-//                    }
-//                } else {
-//                    alert("No se encontró ningún producto con ese ID.");
-//                }
-//             }
-//             let tuGrabacion = prompt("Cuéntame sobre tu proyecto, la referencia, su concepto, etc. y trataré de responderte lo más rápido posible para proceder a trabajar. Muchas gracias.");
-//             return tuGrabacion;
-//         } else {
-//             alert("Lo siento, no hay productos de tipo 'grabacion' disponibles.");
-//         }
-//     } else if (( productoIntroducido === "produccion completa" ) || ( productoIntroducido === "producción completa")){
-//         const productosProduccion = productos.filter(producto => producto.tipo === "produccion completa");
-//         if (productosProduccion.length > 0) {
-//             alert("Elegiste produccion completa.\n\nProductos disponibles:\n" + 
-//                 productosProduccion.map(producto => `${producto.nombre}, Id: ${producto.id}, Precio: $${producto.precio}, Disponibles: ${producto.cantidad}`).join("\n")
-//             );
-//             let agregarAlCarrito = confirm("¿Deseas agregar algún producto al carrito?");
-//             if (agregarAlCarrito) {
-//                let idProducto = Number(prompt("Introduce el ID del producto que deseas agregar al carrito:"));
-//                let productoElegido = productos.find(producto => producto.id === idProducto);
-//                if (productoElegido) {
-//                    if (productoElegido.cantidad > 0) {
-//                        carrito.push(productoElegido);
-//                        productoElegido.cantidad--; 
-//                        alert(`Se ha agregado ${productoElegido.nombre} al carrito.`);
-//                    } else {
-//                        alert(`Lo siento, no hay más unidades disponibles de ${productoElegido.nombre}.`);
-//                    }
-//                } else {
-//                    alert("No se encontró ningún producto con ese ID.");
-//                }
-//             }
-//             let tuProduccion = prompt("Cuentame sobre tu proyecto, si ya tienes alguna maqueta, alguna referencia, su concepto, etc. y te intentare responder lo mas rápido para proceder a trabajar. Muchas gracias.");
-//             return tuProduccion;
-//         } else {
-//             alert("Lo siento, no hay productos de tipo 'produccion completa' disponibles.");
-//         }
-//     }
-
-
-// }
-
-// // productoMensaje();
-
-// // creando funcion para comprobar el carrito
-
-// function verCarro () {
-//     let objetosCarro = confirm("¿Deseas ver el carro?");
-//     if (objetosCarro) {
-//         if (carrito.length > 0) {
-//             let mensaje = "Productos en el carrito:\n";
-//             let total = 0; 
-//             carrito.forEach(producto => {
-//                 mensaje += `${producto.nombre} - Precio: $${producto.precio}\n`;
-//                 total += producto.precio; 
-//             });
-//             mensaje += `Total: $${total}`;
-//             alert(mensaje);
-//         } else {
-//             alert("El carrito está vacío.");
-//         }
-//     }
-// }
-
-// verCarro ();
-
-// agregarProductoAlCarro();
-
-// verCarro();
-
-
-
-
-
+// let carrito = [];

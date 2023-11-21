@@ -48,6 +48,13 @@ body main {
 .header .header__menu .logo__mobile {
   height: 100%;
   width: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.header .header__menu .logo__mobile a {
+  justify-self: center;
+  align-self: center;
 }
 .header .menu__nav {
   list-style: none;
@@ -58,8 +65,20 @@ body main {
   padding: 0;
   transition: color 0.3s;
 }
-.header .menu__nav .menu__carrito {
+.header .menu__carrito {
   width: 80px;
+  height: 100px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding: 0;
+  margin: 0px 20px 0px 0px;
+}
+.header .menu__carrito img {
+  transition: width 1s;
+}
+.header .menu__carrito img:hover {
+  width: 45px;
 }
 .header a {
   font-family: "Arvo", serif;
@@ -1109,6 +1128,11 @@ body main {
     align-self: center;
     justify-self: center;
   }
+}
+#titulo__carrito {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
