@@ -32,52 +32,53 @@ class Persona {
     }
 }
 
+
 //Valor Productos y Carrito
 
 const productos = [
-    {id: 1, tipo: "produccion completa", nombre: 'Produccion Completa Promo Apollo Full', precio: 155000, cantidad: 2},
-    {id: 2, tipo: "produccion completa", nombre: 'Produccion Completa Promo Apollo', precio: 145000, cantidad: 4},
-    {id: 3, tipo: "produccion completa", nombre: 'Produccion Completa Promo Akai', precio: 125000, cantidad: 2},
-    {id: 4, tipo: "beats", nombre: 'Beat a Pedido', precio: 80000, cantidad: 4},
-    {id: 5, tipo: "beats", nombre: 'Beat de Catalogo', precio: 50000, cantidad: 0},
-    {id: 6, tipo: "beats", nombre: 'Beat Ofertas', precio: 30000, cantidad: 0},
-    {id: 7, tipo: "grabacion", nombre: 'Grabacion de Voces Apollo', precio: 70000, cantidad: 3},
-    {id: 8, tipo: "grabacion", nombre: 'Grabacion de Voces Apollo Maqueta', precio: 30000, cantidad: 1},
-    {id: 9, tipo: "grabacion", nombre: 'Grabacion de Voces Akai', precio: 60000, cantidad: 3},
-    {id: 10, tipo: "grabacion", nombre: 'Grabacion de Voces Akai Maqueta', precio: 20000, cantidad: 1},
-    {id: 11, tipo: "sonido", nombre: 'Mezcla Beat', precio: 50000, cantidad: 2},
-    {id: 12, tipo: "sonido", nombre: 'Mezcla de Voces', precio: 50000, cantidad: 2},
-    {id: 13, tipo: "sonido", nombre: 'Master', precio: 15000, cantidad: 2},
-    {id: 14, tipo: "sonido", nombre: 'Promo Mezcla + Master Voz y Beat', precio: 65000, cantidad: 4},    
+    {id: 1, tipo: "Produccion completa", nombre: 'Produccion Completa Promo Apollo Full', precio: 155000, cantidad: 2},
+    {id: 2, tipo: "Produccion completa", nombre: 'Produccion Completa Promo Apollo', precio: 145000, cantidad: 4},
+    {id: 3, tipo: "Produccion completa", nombre: 'Produccion Completa Promo Akai', precio: 125000, cantidad: 2},
+    {id: 4, tipo: "Beats", nombre: 'Beat a Pedido', precio: 80000, cantidad: 4},
+    {id: 5, tipo: "Beats", nombre: 'Beat de Catalogo', precio: 50000, cantidad: 0},
+    {id: 6, tipo: "Beats", nombre: 'Beat Ofertas', precio: 30000, cantidad: 0},
+    {id: 7, tipo: "Grabacion", nombre: 'Grabacion de Voces Apollo', precio: 70000, cantidad: 3},
+    {id: 8, tipo: "Grabacion", nombre: 'Grabacion de Voces Apollo Maqueta', precio: 30000, cantidad: 1},
+    {id: 9, tipo: "Grabacion", nombre: 'Grabacion de Voces Akai', precio: 60000, cantidad: 3},
+    {id: 10, tipo: "Grabacion", nombre: 'Grabacion de Voces Akai Maqueta', precio: 20000, cantidad: 1},
+    {id: 11, tipo: "Sonido", nombre: 'Mezcla Beat', precio: 50000, cantidad: 2},
+    {id: 12, tipo: "Sonido", nombre: 'Mezcla de Voces', precio: 50000, cantidad: 2},
+    {id: 13, tipo: "Sonido", nombre: 'Master', precio: 15000, cantidad: 2},
+    {id: 14, tipo: "Sonido", nombre: 'Promo Mezcla + Master Voz y Beat', precio: 65000, cantidad: 4},    
 ];
 
-// Crear los elementos y añadirlos al contenedor correcto
+// Creacion de los productos en #catalogo__lista con su CSS
 for (const producto of productos) {
     let contenedor = document.createElement("div");
-    contenedor.innerHTML = `<h3>ID: ${producto.id}</h3> 
-                            <p>Producto: ${producto.nombre}</p>
+    contenedor.innerHTML = `<h3>${producto.nombre}</h3> 
                             <p>${producto.tipo}</p>
-                            <p>$ ${producto.precio}</p>
+                            <p class="catalogoListaPrecio">$ ${producto.precio}</p>
                             <button class="agregar-carrito" data-id="${producto.id}">Agregar al carrito</button>`;
-    
-    document.querySelector("#catalogo__lista").appendChild(contenedor);
+
+    document.querySelector("#catalogoLista").appendChild(contenedor);
 }
 
 // Agregar evento clic al botón "Agregar al carrito"
 const botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
+
 botonesAgregarCarrito.forEach(boton => {
     boton.addEventListener('click', agregarAlCarrito);
 });
 
 // Función para agregar productos al carrito
 function agregarAlCarrito(event) {
-    const productId = parseInt(event.target.getAttribute('data-id'));
+    const productoId = parseInt(event.target.getAttribute('data-id'));
 
     // Encontrar el producto en base a su ID
-    const productoSeleccionado = productos.find(producto => producto.id === productId);
+    const productoSeleccionado = productos.find(producto => producto.id === productoId);
 
     if (productoSeleccionado) {
-        // Aquí puedes implementar la lógica para agregar el producto al carrito
+        // lógica para agregar el producto al carrito
         // Por ahora, solo imprimiré un mensaje en la consola
         alert(`Producto agregado al carrito: ${productoSeleccionado.nombre}`);
         // También puedes actualizar la interfaz de usuario para reflejar el producto agregado al carrito
