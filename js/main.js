@@ -31,7 +31,7 @@ class Persona {
         this.edad = edad; 
     }
 }
-
+// localStorage.getItem('persona', JSON.stringify(persona));
 
 //Valor Productos y Carrito
 
@@ -51,6 +51,7 @@ const productos = [
     {id: 13, tipo: "Sonido", nombre: 'Master', precio: 15000, cantidad: 2},
     {id: 14, tipo: "Sonido", nombre: 'Promo Mezcla + Master Voz y Beat', precio: 65000, cantidad: 4},    
 ];
+
 
 // Creacion de los productos en #catalogo__lista con su CSS
 for (const producto of productos) {
@@ -86,16 +87,28 @@ function agregarAlCarrito(event) {
         alert('Producto no encontrado');
     }
 }
+///////////////////
+// CARRITO PAGINA //
+let carrito = [];
+localStorage.getItem('carrito', JSON.stringify(carrito));
 
-// // CARRITO PAGINA
+let tituloCarrito = document.getElementById("titulo__carrito")
 
-// let tituloCarrito = document.getElementById("titulo__carrito")
+if ( nombre === "" || edad === "" ) {
+    tituloCarrito.innerText = "Bienvenido a tu carrito, " + datoNoIntroducido ;
+} else {
+    tituloCarrito.innerText = "Bienvenido a tu carrito, " + Persona.nombre; 
+}
 
-// if ( nombre === "" || edad === "" ) {
-//     tituloCarrito.innerText = "Bienvenido a tu carrito, " + datoNoIntroducido ;
-// } else {
-//     tituloCarrito.innerText = "Bienvenido a tu carrito, " + Persona.nombre; 
+// // Recuperar datos del localStorage
+// let carritoGuardado = JSON.parse(localStorage.getItem('carrito'));
+// let personaGuardada = JSON.parse(localStorage.getItem('persona'));
+// // Verificacion de datos
+// if (personaGuardada) {
+//     tituloCarrito.innerText = "Bienvenido a tu carrito, " + personaGuardada.nombre;
 // }
-// // tituloCarrito.innerText = "Bienvenido a tu carrito, " + Persona.nombre;
 
-// let carrito = [];
+// if (carritoGuardado) {
+//     // Aquí puedes usar 'carritoGuardado' para actualizar la interfaz de usuario del carrito
+//     // Por ejemplo, recorrer 'carritoGuardado' y mostrar los productos en el carrito
+// }
